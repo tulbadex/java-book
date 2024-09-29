@@ -1,0 +1,22 @@
+# intialize spring
+https://start.spring.io/
+# maven installation guide
+https://phoenixnap.com/kb/install-maven-windows
+# select dependencies
+Spring Web
+Spring Data JPA
+H2
+PostgreSQL
+# to start application
+./mvnw spring-boot:run
+# switching between databases
+mvn spring-boot:run -Dspring-boot.run.profiles=h2
+mvn spring-boot:run -Dspring-boot.run.profiles=postgres
+# to view h2 database 
+http://localhost:8080/h2-console
+# login details
+JDBC URL: jdbc:h2:mem:bookstoredb
+Username: sa
+Password: password
+# clean and rebuild
+mvn clean install
