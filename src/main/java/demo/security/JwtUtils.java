@@ -1,4 +1,5 @@
 
+
 package demo.security;
 
 import io.jsonwebtoken.Claims;
@@ -11,16 +12,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import demo.controller.BookController;
-
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Service
 public class JwtUtils {
@@ -31,10 +27,7 @@ public class JwtUtils {
     @Value("${security.jwt.expiration-time}")
     private long jwtExpiration;
 
-    private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
-
     public String extractUsername(String token) {
-        logger.debug("Extracted username from token: {}", token);
         return extractClaim(token, Claims::getSubject);
     }
 
